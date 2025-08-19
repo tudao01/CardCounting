@@ -21,7 +21,7 @@ export function GameMenu({ playerMoney, onNewGame, onAIPlay, onContinue }: GameM
               New Game
             </button>
             <button
-              onClick={onNewGame}
+              onClick={onAIPlay}
               className="w-full bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded font-medium transition-colors"
             >
               AI Blackjack

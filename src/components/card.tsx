@@ -1,15 +1,9 @@
 import type { CardType } from "@/lib/types"
 
 function getCardFilename(card: CardType): string {
-  const suitMap: Record<string, string> = {
-    "♠": "s",
-    "♥": "h",
-    "♦": "d",
-    "♣": "c",
-  }
-
+  
   const value = card.value.toLowerCase()
-  const suit = suitMap[card.suit]
+  const suit = card.suit.toLowerCase()
   return `${value}${suit}.png`
 }
 
@@ -25,7 +19,7 @@ export function CardComponent({ card, hidden = false }: { card: CardType; hidden
   return (
     <div className="w-20 h-28 shadow-lg">
       <img
-        src={`/${getCardFilename(card)}`}
+        src={`/PNG-cards-1.3/${getCardFilename(card)}`}
         alt={`${card.value} of ${card.suit}`}
         className="w-full h-full object-contain rounded-lg"
       />
